@@ -47,7 +47,7 @@ INSERT INTO accounts (email, username) VALUES ('example_2@gmail.com', 'example_2
 Run this SQL file on the database to truncate (empty) the table, and insert the seed data. Be mindful of the fact any existing records in the table will be deleted.
 
 ```bash
-psql -h 127.0.0.1 your_database_name < seeds_accounts.sql
+psql -h 127.0.0.1 social_network_test < seeds_accounts.sql
 ```
 
 ## 3. Define the class names
@@ -202,7 +202,7 @@ def reset_accounts_table
   connection.exec(seed_sql)
 end
 
-describe accountRepository do
+describe AccountRepository do
   before(:each) do 
     reset_accounts_table
   end
