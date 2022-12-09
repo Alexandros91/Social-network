@@ -64,5 +64,17 @@ RSpec.describe AccountRepository do
     end
   end
 
+  describe '#delete' do
+    it 'deletes an account object from the accounts table' do
+      repo = AccountRepository.new
+      id_to_delete = 1
+      repo.delete(id_to_delete)
+      albums = repo.all
+
+      expect(albums.length).to eq 1
+      expect(albums.first.id).to eq 2
+    end
+  end
+
 
 end

@@ -48,9 +48,15 @@ class AccountRepository
     return nil
   end
 
-  # def update(account)
-  # end
+  def delete(id)
+    sql = 'DELETE FROM accounts WHERE id = $1'
+    sql_params = [id]
 
-  # def delete(account)
+    DatabaseConnection.exec_params(sql, sql_params)
+
+    return nil
+  end
+
+  # def update(account)
   # end
 end
