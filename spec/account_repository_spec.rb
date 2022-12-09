@@ -18,14 +18,9 @@ RSpec.describe AccountRepository do
       accounts = repo.all
 
       expect(accounts.length).to eq 2
-
-      expect(accounts[0].id).to eq 1
-      expect(accounts[0].email).to eq 'example_1@gmail.com'
-      expect(accounts[0].username).to eq 'example_1'
-
-      expect(accounts[1].id).to eq 2
-      expect(accounts[1].name).to eq 'example_2@gmail.com'
-      expect(accounts[1].cohort_name).to eq 'example_2'
+      expect(accounts.first.id).to eq 1
+      expect(accounts.first.email).to eq 'example_1@gmail.com'
+      expect(accounts.first.username).to eq 'example_1'
     end
   end
 

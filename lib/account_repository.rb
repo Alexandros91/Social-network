@@ -1,12 +1,24 @@
+require_relative './account'
+
 class AccountRepository
 
   # Selecting all records
   # No arguments
   def all
-    # Executes the SQL query:
-    # SELECT id, name, cohort_name FROM accounts;
+    sql = 'SELECT id, email, username FROM accounts;'
+    result_set = DatabaseConnectionn.exec_params(sql, [])
 
-    # Returns an array of account objects.
+    accounts = []
+
+    result_set.each do |record|
+      account = Account.new
+      account.id = record['id'].to_i
+      account.email = record['email']
+      account.username = record['username']
+      accounts << account
+    end
+
+    return accounts
   end
 
   # Gets a single record by its ID
