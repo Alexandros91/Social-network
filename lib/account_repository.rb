@@ -6,7 +6,7 @@ class AccountRepository
   # No arguments
   def all
     sql = 'SELECT id, email, username FROM accounts;'
-    result_set = DatabaseConnectionn.exec_params(sql, [])
+    result_set = DatabaseConnection.exec_params(sql, [])
 
     accounts = []
 
@@ -24,10 +24,18 @@ class AccountRepository
   # Gets a single record by its ID
   # One argument: the id (number)
   def find(id)
-    # Executes the SQL query:
-    # SELECT id, name, cohort_name FROM accounts WHERE id = $1;
+    sql = 'SELECT id, email, username FROM accounts WHERE id = $1;'
+    sql_params = [id]
 
-    # Returns a single account object.
+    result_set = DatabaseConnection.exec_params(sql, sql_params)
+    record = result_set[0]
+
+    account = Account.new
+    account.id = record['id'].to_i
+    account.email = record['email']
+    account.username = record['username']
+
+    return account
   end
 
   # Add more methods below for each operation you'd like to implement.
