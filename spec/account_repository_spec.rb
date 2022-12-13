@@ -17,7 +17,7 @@ RSpec.describe AccountRepository do
 
       accounts = repo.all
 
-      expect(accounts.length).to eq 2
+      expect(accounts.length).to eq 4
       expect(accounts.first.id).to eq 1
       expect(accounts.first.email).to eq 'example_1@gmail.com'
       expect(accounts.first.username).to eq 'example_1'
@@ -51,16 +51,16 @@ RSpec.describe AccountRepository do
       repo = AccountRepository.new
 
       account = Account.new
-      account.email = 'example_3@gmail.com'
-      account.username = 'example_3'
+      account.email = 'example_5@gmail.com'
+      account.username = 'example_5'
 
       repo.create(account)
       accounts = repo.all
       new_account = accounts.last
 
-      expect(accounts.length).to eq 3
-      expect(new_account.email).to eq 'example_3@gmail.com'
-      expect(new_account.username).to eq 'example_3'
+      expect(accounts.length).to eq 5
+      expect(new_account.email).to eq 'example_5@gmail.com'
+      expect(new_account.username).to eq 'example_5'
     end
   end
 
@@ -71,7 +71,7 @@ RSpec.describe AccountRepository do
       repo.delete(id_to_delete)
       albums = repo.all
 
-      expect(albums.length).to eq 1
+      expect(albums.length).to eq 3
       expect(albums.first.id).to eq 2
     end
   end

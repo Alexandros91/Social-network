@@ -16,7 +16,7 @@ Otherwise, [follow this recipe to design and create the SQL schema for your tabl
 Table: posts
 
 Columns:
-id | email | username
+id | title | content | account_id
 ```
 
 ## 2. Create Test SQL seeds
@@ -47,7 +47,7 @@ INSERT INTO posts (title, content, views, account_id) VALUES ('post_2', 'post_2 
 Run this SQL file on the database to truncate (empty) the table, and insert the seed data. Be mindful of the fact any existing records in the table will be deleted.
 
 ```bash
-psql -h 127.0.0.1 social_network_test < seeds_posts.sql
+psql -h 127.0.0.1 social_network_test < spec/seeds_posts.sql
 ```
 
 ## 3. Define the class names
