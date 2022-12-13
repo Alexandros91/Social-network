@@ -15,9 +15,10 @@ CREATE TABLE posts (
   title text,
   content text,
   views int,
-  account_id int references accounts(id)
-  -- constraint fk_account foreign key(account_id)
-    -- on delete cascade
+  account_id int,
+  constraint fk_account foreign key(account_id)
+    references accounts(id)
+    on delete cascade
 );
 
 INSERT INTO posts (title, content, views, account_id) VALUES ('First post', 'First post content', 60, 2);
