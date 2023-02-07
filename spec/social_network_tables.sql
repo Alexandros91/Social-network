@@ -4,10 +4,10 @@ CREATE TABLE accounts (
   username text
 );
 
-INSERT INTO accounts (email, username) VALUES ('email_1@gmail.com', 'username_1');
-INSERT INTO accounts (email, username) VALUES ('email_2@gmail.com', 'username_2');
-INSERT INTO accounts (email, username) VALUES ('email_3@gmail.com', 'username_3');
-INSERT INTO accounts (email, username) VALUES ('email_4@gmail.com', 'username_4');
+INSERT INTO accounts (email, username) VALUES ('original_1@gmail.com', 'original_user_1');
+INSERT INTO accounts (email, username) VALUES ('original_2@gmail.com', 'original_user_2');
+INSERT INTO accounts (email, username) VALUES ('original_3@gmail.com', 'original_user_3');
+INSERT INTO accounts (email, username) VALUES ('original_4@gmail.com', 'original_user_4');
 
 
 CREATE TABLE posts (
@@ -21,11 +21,11 @@ CREATE TABLE posts (
     on delete cascade
 );
 
-INSERT INTO posts (title, content, views, account_id) VALUES ('First post', 'First post content', 60, 2);
-INSERT INTO posts (title, content, views, account_id) VALUES ('Second post', 'Second post content', 80, 4);
-INSERT INTO posts (title, content, views, account_id) VALUES ('Third post', 'Third post content', 20, 3);
-INSERT INTO posts (title, content, views, account_id) VALUES ('Fourth post', 'Fourth post content', 80, 3);
-INSERT INTO posts (title, content, views, account_id) VALUES ('Fifth post', 'Fifth post content', 40, 2);
-INSERT INTO posts (title, content, views, account_id) VALUES ('Sixth post', 'Sixth post content', 90, 4);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 1', 'Original content 1', 60, 2);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 2', 'Original content 2', 80, 4);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 3', 'Original content 3', 20, 3);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 4', 'Original content 4', 80, 3);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 5', 'Original content 5', 40, 2);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Original post 6', 'Original content 6', 90, 4);
 
 

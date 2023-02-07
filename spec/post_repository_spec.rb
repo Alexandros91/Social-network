@@ -20,8 +20,8 @@ RSpec.describe PostRepository do
       expect(posts.length).to eq 6
 
       expect(posts.first.id).to eq 1
-      expect(posts.first.title).to eq 'post_1'
-      expect(posts.first.content).to eq 'post_1 content'
+      expect(posts.first.title).to eq 'Fake post 1'
+      expect(posts.first.content).to eq 'Fake content 1'
       expect(posts.first.views).to eq 30
       expect(posts.first.account_id).to eq 2
     end
@@ -33,8 +33,8 @@ RSpec.describe PostRepository do
 
       post = repo.find(1)
       expect(post.id).to eq 1
-      expect(post.title).to eq 'post_1'
-      expect(post.content).to eq 'post_1 content'
+      expect(post.title).to eq 'Fake post 1'
+      expect(post.content).to eq 'Fake content 1'
       expect(post.views).to eq 30
       expect(post.account_id).to eq 2
     end
@@ -45,8 +45,8 @@ RSpec.describe PostRepository do
 
     post = repo.find(3)
     expect(post.id).to eq 3
-    expect(post.title).to eq 'post_3'
-    expect(post.content).to eq 'post_3 content'
+    expect(post.title).to eq 'Fake post 3'
+    expect(post.content).to eq 'Fake content 3'
     expect(post.views).to eq 50
     expect(post.account_id).to eq 4
   end
@@ -56,8 +56,8 @@ RSpec.describe PostRepository do
       repo = PostRepository.new
 
       post = Post.new
-      post.title = 'post_6'
-      post.content = 'post_6 content'
+      post.title = 'Fake post 6'
+      post.content = 'Fake content 6'
       post.views = 90
       post.account_id = 3
 
@@ -66,8 +66,8 @@ RSpec.describe PostRepository do
       last_post = posts.last
 
       expect(posts.length).to eq 7
-      expect(last_post.title).to eq 'post_6'
-      expect(last_post.content).to eq 'post_6 content'
+      expect(last_post.title).to eq 'Fake post 6'
+      expect(last_post.content).to eq 'Fake content 6'
       expect(last_post.views).to eq 90
       expect(last_post.account_id).to eq 3
     end

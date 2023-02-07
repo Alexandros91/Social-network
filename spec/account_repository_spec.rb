@@ -19,8 +19,8 @@ RSpec.describe AccountRepository do
 
       expect(accounts.length).to eq 4
       expect(accounts.first.id).to eq 1
-      expect(accounts.first.email).to eq 'example_1@gmail.com'
-      expect(accounts.first.username).to eq 'example_1'
+      expect(accounts.first.email).to eq 'fake_1@gmail.com'
+      expect(accounts.first.username).to eq 'fake_user_1'
     end
   end
 
@@ -31,8 +31,8 @@ RSpec.describe AccountRepository do
       account = repo.find(1)
 
       expect(account.id).to eq 1
-      expect(account.email).to eq 'example_1@gmail.com'
-      expect(account.username).to eq 'example_1'
+      expect(account.email).to eq 'fake_1@gmail.com'
+      expect(account.username).to eq 'fake_user_1'
     end
 
     it 'returns the account object with id 2' do
@@ -41,8 +41,8 @@ RSpec.describe AccountRepository do
       account = repo.find(2)
 
       expect(account.id).to eq 2
-      expect(account.email).to eq 'example_2@gmail.com'
-      expect(account.username).to eq 'example_2'
+      expect(account.email).to eq 'fake_2@gmail.com'
+      expect(account.username).to eq 'fake_user_2'
     end
   end
 
@@ -51,16 +51,16 @@ RSpec.describe AccountRepository do
       repo = AccountRepository.new
 
       account = Account.new
-      account.email = 'example_5@gmail.com'
-      account.username = 'example_5'
+      account.email = 'fake_5@gmail.com'
+      account.username = 'fake_user_5'
 
       repo.create(account)
       accounts = repo.all
       new_account = accounts.last
 
       expect(accounts.length).to eq 5
-      expect(new_account.email).to eq 'example_5@gmail.com'
-      expect(new_account.username).to eq 'example_5'
+      expect(new_account.email).to eq 'fake_5@gmail.com'
+      expect(new_account.username).to eq 'fake_user_5'
     end
   end
 
